@@ -8,14 +8,13 @@
 </center>
 
 ## ► Table of contents
-- [► Table of contents](#-table-of-contents)
-- [Por que?](#por-que)
-- [Como usar?](#como-usar)
-- [Features](#features)
-- [Dependências](#dependências)
-- [Política de uso justo](#política-de-uso-justo)
-- [Créditos e agradecimentos](#créditos-e-agradecimentos)
-- [Equipe](#equipe)
+  - [Por que?](#por-que)
+  - [Como usar?](#como-usar)
+  - [Features](#features)
+  - [Dependências](#dependências)
+  - [Política de uso justo](#política-de-uso-justo)
+  - [Créditos e agradecimentos](#créditos-e-agradecimentos)
+  - [Equipe](#equipe)
 
 ## Por que?
 Sabemos que há poucas aplicações fáceis de usar e úteis para o estudo da Bíblia.
