@@ -5,7 +5,7 @@ function getWindowDimensions() {
   return {
     width,
     height
-  };
+  }
 }
 
 const { height, width } = getWindowDimensions()
@@ -28,9 +28,25 @@ export const styleObject = makeStyles((theme) => ({
     width: width,
     minWidth: width,
     maxWidth: width,
-    minHeight: height-48,
+    minHeight: height,
     paddingLeft: '10px',
     paddingRight: '10px',
-    backgroundColor: theme.palette.background
+    backgroundColor: 'lightgray'
+  },
+  appBar: {
+    padding: '5px 20px',
+    borderTopRightRadius: 0,
+    borderTopLeftRadius: 0,
+    borderBottomLeftRadius: 20,
+    borderBottomRightRadius: 20
+  },
+  middleContainers: {
+    width: '100%',
+    minHeight: height,
+    padding: '20px 20px',
+    borderTopRightRadius: 20,
+    borderTopLeftRadius: 20,
+    borderBottomLeftRadius: 0,
+    borderBottomRightRadius: 0
   }
 }))

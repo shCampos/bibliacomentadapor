@@ -10,7 +10,7 @@ import { styleObject } from './assets/styleObject.js'
 
 import Biblia from './components/biblia'
 import Comments from './components/comments'
-import Appbar from './components/Appbar'
+import Appbar from './components/appbar'
 
 const useDarkMode = () => {
   const [theme, setTheme] = useState(themeObject)
@@ -43,25 +43,26 @@ export default function App() {
   const { currentVersion, setCurrentVersion } = useState('')
   const { currentBookAbbrev, setCurrentBookAbbrev } = useState('')
   const { currentChapterNumber, setCurrentChapterNumber } = useState(null)
-  const { currentChapterText, setCurrentChapterText } = userState(null)
-  const { userComments, setUserComments } = userState({})
+  const { currentChapterText, setCurrentChapterText } = useState(null)
+  const { userComments, setUserComments } = useState({})
   //verificar se já tem no localstorage
   
   return (
     <ThemeProvider theme={themeConfig}>
     <CssBaseline/>
-      <div style={{width: '100%', display: 'flex'}} className={classes.root}>
-        <Grid container direction="column">
+      {/* <div style={{width: '100%', display: 'flex'}} className={classes.root}> */}
+      <div  className={classes.root}>
+        <Grid container direction="column" spacing={2}>
           <Grid item>
-            <Appbar/>
+            <Appbar setCurrentVersion={setCurrentVersion} toogleDarkMode={toogleDarkMode}/>
           </Grid>
           <Grid item>
-            <Grid container direction="row">
-              <Grid row>
+            <Grid container direction="row" justify="center" alignItems="stretch" spacing={2}>
+              <Grid item xs={6}>
                 <Biblia/>
               </Grid>
-              <Grid row>
-                <Comments/>
+              <Grid item xs={6}>
+                <Comments className={classes.middleContainers}/>
               </Grid>
             </Grid>
           </Grid>

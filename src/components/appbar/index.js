@@ -1,18 +1,47 @@
 import React from 'react'
-import { Grid } from '@material-ui/core'
+import {
+  ButtonGroup,
+  Grid,
+  IconButton,
+  Paper,
+} from '@material-ui/core'
+import {
+  Brightness4Outlined,
+  HomeOutlined,
+  SettingsOutlined,
+} from '@material-ui/icons'
+import { styleObject } from '../../assets/styleObject.js'
 
-export default function Appbar() {
+import ChooseTextForm from './ChooseTextForm'
+import SiteLogo from './SiteLogo'
+
+export default function Appbar(props) {
+  const { setCurrentVersion, toogleDarkMode } = props
+  const classes = styleObject()
+
   return (
-    <Grid container direction="row" justify="space-between" alignItems="center">
-      <Grid item>
-        Logo
+    <Paper className={classes.appBar} elevation={4}>
+      <Grid container direction="row" justify="space-between" alignItems="center">
+        <Grid item>
+          <SiteLogo/>
+        </Grid>
+        <Grid item>
+          <ChooseTextForm setCurrentVersion={setCurrentVersion}/>
+        </Grid>
+        <Grid item>
+          <ButtonGroup>
+            <IconButton>
+              <HomeOutlined/>
+            </IconButton>
+            <IconButton onClick={toogleDarkMode}>
+              <Brightness4Outlined/>
+            </IconButton>
+            <IconButton>
+              <SettingsOutlined/>
+            </IconButton>
+          </ButtonGroup>
+        </Grid>
       </Grid>
-      <Grid item>
-        escolher passagem
-      </Grid>
-      <Grid item>
-        dropdown configurações
-      </Grid>
-    </Grid>
+    </Paper>
   )
 }
