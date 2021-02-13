@@ -40,6 +40,7 @@ export default function App() {
   }, [])
   const classes = styleObject()
 
+  const [ openCollapse, setOpenCollapse ] = useState(false)
   const [ currentParameters, setCurrentParameters ] = useState({})
   //const [ currentBookAbbrev, setCurrentBookAbbrev ] = useState('')
   //const [ currentChapterNumber, setCurrentChapterNumber ] = useState(null)
@@ -54,9 +55,14 @@ export default function App() {
       <div  className={classes.root}>
         <Grid container direction="column" spacing={2}>
           <Grid item>
-            <Appbar setCurrentParameters={setCurrentParameters} toogleDarkMode={toogleDarkMode}/>
+            <Appbar
+              setCurrentParameters={setCurrentParameters}
+              toogleDarkMode={toogleDarkMode}
+              openCollapse={openCollapse}
+              setOpenCollapse={setOpenCollapse}
+            />
           </Grid>
-          <Grid item>
+          {(!openCollapse)&&(<Grid item>
             <Grid container direction="row" justify="center" spacing={2}>
               <Grid item xs={6} style={{paddingBottom: 0}}>
                 <Biblia/>
@@ -65,7 +71,7 @@ export default function App() {
                 <Comments className={classes.middleContainers}/>
               </Grid>
             </Grid>
-          </Grid>
+          </Grid>)}
         </Grid>
       </div>
     </ThemeProvider>

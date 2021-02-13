@@ -40,6 +40,9 @@ export const styleObject = makeStyles((theme) => ({
     borderBottomLeftRadius: 20,
     borderBottomRightRadius: 20
   },
+  welcome: {
+    height: height
+  },
   middleContainers: {
     width: '100%',
     minHeight: height-111,

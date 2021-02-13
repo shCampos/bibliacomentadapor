@@ -11,7 +11,7 @@ export default function Biblia() {
   
   return (
     <Paper className={classes.middleContainers} elevation={3}>
-      <Typography variant="h6">livro</Typography>
+      <Typography variant="h6">LIVRO 4</Typography>
       {
         ['abc', 'dbsda', 'oihsdisd'].map((text, index) => {
           return (
