@@ -41,10 +41,10 @@ export default function App() {
   const classes = styleObject()
 
   const { currentVersion, setCurrentVersion } = useState('')
-  const { currentBookAbbrev, setCurrentBookAbbrev } = useState('')
-  const { currentChapterNumber, setCurrentChapterNumber } = useState(null)
-  const { currentChapterText, setCurrentChapterText } = useState(null)
-  const { userComments, setUserComments } = useState({})
+  //const { currentBookAbbrev, setCurrentBookAbbrev } = useState('')
+  //const { currentChapterNumber, setCurrentChapterNumber } = useState(null)
+  //const { currentChapterText, setCurrentChapterText } = useState(null)
+  //const { userComments, setUserComments } = useState({})
   //verificar se já tem no localstorage
   
   return (
@@ -57,11 +57,11 @@ export default function App() {
             <Appbar setCurrentVersion={setCurrentVersion} toogleDarkMode={toogleDarkMode}/>
           </Grid>
           <Grid item>
-            <Grid container direction="row" justify="center" alignItems="stretch" spacing={2}>
-              <Grid item xs={6}>
+            <Grid container direction="row" justify="center" spacing={2}>
+              <Grid item xs={6} style={{paddingBottom: 0}}>
                 <Biblia/>
               </Grid>
-              <Grid item xs={6}>
+              <Grid item xs={6} style={{paddingBottom: 0}}>
                 <Comments className={classes.middleContainers}/>
               </Grid>
             </Grid>

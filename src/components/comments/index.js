@@ -9,7 +9,7 @@ export default function Comments() {
   const classes = styleObject()
 
   return (
-    <Paper className={classes.middleContainers}>
+    <Paper className={classes.middleContainers} elevation={3}>
       <Typography variant="h6">Comentários</Typography>
     </Paper>
   )

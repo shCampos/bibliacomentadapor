@@ -1,22 +1,22 @@
 export const themeObject = {
   palette: {
     primary: {
-      main: '#3eb827',
+      main: '#2B7FAB',
     },
     secondary: {
       main: '#3975B8',
     },
     error: {
-      main: '#B82114'
+      main: '#AB3C43'
     },
     warning: {
-      main: '#B85014'
+      main: '#F7C725'
     },
     info: {
-      main: '#3975B8'
+      main: '#3342AB'
     },
     success: {
-      main: '#369E21'
+      main: '#58AB22'
     },
     type: 'light'
   },

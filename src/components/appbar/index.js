@@ -20,7 +20,7 @@ export default function Appbar(props) {
   const classes = styleObject()
 
   return (
-    <Paper className={classes.appBar} elevation={4}>
+    <Paper className={classes.appBar} elevation={3}>
       <Grid container direction="row" justify="space-between" alignItems="center">
         <Grid item>
           <SiteLogo/>
@@ -30,13 +30,13 @@ export default function Appbar(props) {
         </Grid>
         <Grid item>
           <ButtonGroup>
-            <IconButton>
+            <IconButton color="primary" disabled>
               <HomeOutlined/>
             </IconButton>
-            <IconButton onClick={toogleDarkMode}>
+            <IconButton color="primary" onClick={toogleDarkMode}>
               <Brightness4Outlined/>
             </IconButton>
-            <IconButton>
+            <IconButton color="primary" disabled>
               <SettingsOutlined/>
             </IconButton>
           </ButtonGroup>

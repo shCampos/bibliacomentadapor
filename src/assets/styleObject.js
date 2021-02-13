@@ -31,7 +31,7 @@ export const styleObject = makeStyles((theme) => ({
     minHeight: height,
     paddingLeft: '10px',
     paddingRight: '10px',
-    backgroundColor: 'lightgray'
+    backgroundColor: '#6CA5C3'
   },
   appBar: {
     padding: '5px 20px',
@@ -42,7 +42,7 @@ export const styleObject = makeStyles((theme) => ({
   },
   middleContainers: {
     width: '100%',
-    minHeight: height,
+    minHeight: height-111,
     padding: '20px 20px',
     borderTopRightRadius: 20,
     borderTopLeftRadius: 20,
