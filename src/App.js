@@ -10,7 +10,7 @@ import { styleObject } from './assets/styleObject.js'
 
 import Biblia from './components/biblia'
 import Comments from './components/comments'
-import Appbar from './components/appbar'
+import Welcome from './components/welcome'
 
 const useDarkMode = () => {
   const [theme, setTheme] = useState(themeObject)
@@ -57,7 +57,7 @@ export default function App() {
       <div  className={classes.root}>
         <Grid container direction="column" spacing={2}>
           <Grid item>
-            <Appbar
+            <Welcome
               currentParameters={currentParameters}
               setCurrentParameters={setCurrentParameters}
               toogleDarkMode={toogleDarkMode}
@@ -68,7 +68,10 @@ export default function App() {
           {(!openCollapse)&&(<Grid item>
             <Grid container direction="row" justify="center" spacing={2}>
               <Grid item xs={6} style={{paddingBottom: 0}}>
-                <Biblia/>
+                <Biblia
+                  currentParameters={currentParameters}
+                  setCurrentParameters={setCurrentParameters}
+                />
               </Grid>
               <Grid item xs={6} style={{paddingBottom: 0}}>
                 <Comments className={classes.middleContainers}/>

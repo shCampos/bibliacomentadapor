@@ -39,21 +39,26 @@ export const styleObject = makeStyles((theme) => ({
     minHeight: height,
     paddingLeft: '10px',
     paddingRight: '10px',
-    backgroundColor: '#6CA5C3'
+    backgroundColor: '#fefefe'
   },
-  appBar: {
-    padding: '5px 20px',
+  welcomePaper: {
+    padding: '0px 20px',    
+    backgroundColor: '#e3ecfc',
     borderTopRightRadius: 0,
     borderTopLeftRadius: 0,
     borderBottomLeftRadius: 20,
     borderBottomRightRadius: 20
   },
-  welcome: {
-    height: height
+  welcomeContent: {
+    height: height-5,
+    color: theme.palette.primary.main
+  },
+  welcomeIcon: {
+    color: theme.palette.primary.main
   },
   middleContainers: {
     width: '100%',
-    minHeight: height-111,
+    minHeight: height-50,
     padding: '20px 20px',
     borderTopRightRadius: 20,
     borderTopLeftRadius: 20,
