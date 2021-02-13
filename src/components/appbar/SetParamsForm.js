@@ -13,7 +13,7 @@ import { styleObject } from '../../assets/styleObject.js'
 import { getAllBooks, getVersions } from '../../utils/bibliaDigitalService.js'
 
 export default function SetParamsForm(props) {
-  const { setCurrentParameters } = props
+  const { currentParameters, setCurrentParameters } = props
   const classe = styleObject()
 
   const [ allVersions, setAllVersions ] = useState([{version: '...'}])
@@ -22,13 +22,20 @@ export default function SetParamsForm(props) {
   useEffect(() => {
     getVersions((res) => setAllVersions(res))
     getAllBooks((res) => setAllBooks(res))
-  })
+  }, [])
   
   return (
-    <Grid container direction="row" alignItens="center" spacing={1}>
+    <Grid container direction="row" spacing={1}>
       <Grid item>
         <FormControl>
-          <Select id="version" defaultValue={'acf'} onChange={setCurrentParameters} size="small">
+          <Select
+            id="version"
+            defaultValue={currentParameters.version}
+            size="small"
+            onChange={
+              e => setCurrentParameters({...currentParameters, version: e.target.value})
+            }
+          >
             {
               (allVersions.length>0)&&(
                 allVersions.map((v) => 
@@ -47,10 +54,33 @@ export default function SetParamsForm(props) {
           getOptionLabel={(option) => option.name}
           style={{ width: 180 }}
           renderInput={(params) => <TextField {...params}/>}
+          onChange={
+            (e, newValue) => {
+              (newValue.abbrev)&&(
+                setCurrentParameters({
+                  ...currentParameters,
+                  bookAbbrev: newValue.abbrev.pt,
+                  bookChapters: newValue.chapters,
+                  currentChapter: 1
+                })
+              )
+            }
+          }
         />
       </Grid>
       <Grid item>
-        <TextField id="chapterNumber" helperText="CAPÍTULO" type="number" size="small" InputProps={{ inputProps: { min: 0, max: 10 } }}/>
+        <TextField
+          id="chapterNumber"
+          helperText="CAPÍTULO"
+          type="number"
+          size="small"
+          style={{ width: 80 }}
+          value={currentParameters.currentChapter}
+          onChange={(e) => setCurrentParameters({...currentParameters, currentChapter: e.target.value})}
+          InputProps={{
+            inputProps: { min: 1, max: currentParameters.bookChapters }
+          }}
+        />
       </Grid>
     </Grid>
   )

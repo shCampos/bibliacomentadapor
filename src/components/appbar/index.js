@@ -20,7 +20,7 @@ import SiteLogo from './SiteLogo'
 import Welcome from './Welcome'
 
 export default function Appbar(props) {
-  const { setCurrentParameters, toogleDarkMode, openCollapse, setOpenCollapse} = props
+  const { currentParameters, setCurrentParameters, toogleDarkMode, openCollapse, setOpenCollapse} = props
   const classes = styleObject()
 
   const handleOpenChange = () => {
@@ -35,7 +35,7 @@ export default function Appbar(props) {
             <SiteLogo/>
           </Grid>
           <Grid item>
-            <SetParamsForm setCurrentParameters={setCurrentParameters}/>
+            <SetParamsForm currentParameters={currentParameters} setCurrentParameters={setCurrentParameters}/>
           </Grid>
           <Grid item>
             <ButtonGroup>

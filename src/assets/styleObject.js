@@ -21,6 +21,14 @@ export const styleObject = makeStyles((theme) => ({
     },
     '*::-webkit-scrollbar-thumb': {
       backgroundColor: 'rgba(0,0,0,.1)',
+    },
+    'input::-webkit-outer-spin-button': {
+      '-webkit-appearance': 'none',
+      margin: 0,
+    },
+    'input::-webkit-inner-spin-button': {
+      '-webkit-appearance': 'none',
+      margin: 0
     }
   },
   root: {

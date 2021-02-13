@@ -41,7 +41,9 @@ export default function App() {
   const classes = styleObject()
 
   const [ openCollapse, setOpenCollapse ] = useState(false)
-  const [ currentParameters, setCurrentParameters ] = useState({})
+  const [ currentParameters, setCurrentParameters ] = useState({
+    version: 'acf',
+  })
   //const [ currentBookAbbrev, setCurrentBookAbbrev ] = useState('')
   //const [ currentChapterNumber, setCurrentChapterNumber ] = useState(null)
   //const [ currentChapterText, setCurrentChapterText ] = useState(null)
@@ -56,6 +58,7 @@ export default function App() {
         <Grid container direction="column" spacing={2}>
           <Grid item>
             <Appbar
+              currentParameters={currentParameters}
               setCurrentParameters={setCurrentParameters}
               toogleDarkMode={toogleDarkMode}
               openCollapse={openCollapse}
