@@ -16,7 +16,7 @@ import ChooseTextForm from './ChooseTextForm'
 import SiteLogo from './SiteLogo'
 
 export default function Appbar(props) {
-  const { setCurrentVersion, toogleDarkMode } = props
+  const { setCurrentParameters, toogleDarkMode } = props
   const classes = styleObject()
 
   return (
@@ -26,7 +26,7 @@ export default function Appbar(props) {
           <SiteLogo/>
         </Grid>
         <Grid item>
-          <ChooseTextForm setCurrentVersion={setCurrentVersion}/>
+          <ChooseTextForm setCurrentParameters={setCurrentParameters}/>
         </Grid>
         <Grid item>
           <ButtonGroup>

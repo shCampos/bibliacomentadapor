@@ -40,13 +40,13 @@ export default function App() {
   }, [])
   const classes = styleObject()
 
-  const { currentVersion, setCurrentVersion } = useState('')
-  //const { currentBookAbbrev, setCurrentBookAbbrev } = useState('')
-  //const { currentChapterNumber, setCurrentChapterNumber } = useState(null)
-  //const { currentChapterText, setCurrentChapterText } = useState(null)
-  //const { userComments, setUserComments } = useState({})
+  const [ currentParameters, setCurrentParameters ] = useState({})
+  //const [ currentBookAbbrev, setCurrentBookAbbrev ] = useState('')
+  //const [ currentChapterNumber, setCurrentChapterNumber ] = useState(null)
+  //const [ currentChapterText, setCurrentChapterText ] = useState(null)
+  //const [ userComments, setUserComments ] = useState({})
   //verificar se já tem no localstorage
-  
+
   return (
     <ThemeProvider theme={themeConfig}>
     <CssBaseline/>
@@ -54,7 +54,7 @@ export default function App() {
       <div  className={classes.root}>
         <Grid container direction="column" spacing={2}>
           <Grid item>
-            <Appbar setCurrentVersion={setCurrentVersion} toogleDarkMode={toogleDarkMode}/>
+            <Appbar setCurrentParameters={setCurrentParameters} toogleDarkMode={toogleDarkMode}/>
           </Grid>
           <Grid item>
             <Grid container direction="row" justify="center" spacing={2}>
