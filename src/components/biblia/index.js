@@ -19,7 +19,6 @@ export default function Biblia(props) {
           <SetParamsForm currentParameters={currentParameters} setCurrentParameters={setCurrentParameters}/>
         </Grid>
         <Grid item>
-          <Typography variant="h6">LIVRO 4</Typography>
           {
             ['abc', 'dbsda', 'oihsdisd'].map((text, index) => {
               return (
@@ -32,7 +31,6 @@ export default function Biblia(props) {
           }
         </Grid>
       </Grid>
-      
     </Paper>
   )
 }

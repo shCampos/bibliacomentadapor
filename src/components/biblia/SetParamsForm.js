@@ -25,7 +25,47 @@ export default function SetParamsForm(props) {
   }, [])
   
   return (
-    <Grid container direction="row" spacing={1}>
+    <Grid container fullWidth direction="row" justify="space-between" spacing={1}>
+      <Grid item>
+        <Grid container diretion="row" spacing={1}>
+          <Grid item>
+            <Autocomplete
+              id="booksName" helperText="LIVRO" size="small"
+              options={allBooks}
+              getOptionLabel={(option) => option.name}
+              style={{ width: 180 }}
+              renderInput={(params) => <TextField {...params}/>}
+              onChange={
+                (e, newValue) => {
+                  (newValue.abbrev)&&(
+                    setCurrentParameters({
+                      ...currentParameters,
+                      bookAbbrev: newValue.abbrev.pt,
+                      bookChapters: newValue.chapters,
+                      currentChapter: 1
+                    })
+                  )
+                }
+              }
+            />
+          </Grid>
+          <Grid item>
+            <TextField
+              id="chapterNumber"
+              helperText="CAPÍTULO"
+              type="number"
+              size="small"
+              style={{ width: 80 }}
+              value={currentParameters.currentChapter}
+              onChange={(e) => setCurrentParameters({...currentParameters, currentChapter: e.target.value})}
+              InputProps={{
+                inputProps: { min: 1, max: currentParameters.bookChapters }
+              }}
+            />
+          </Grid>
+
+        </Grid>
+      </Grid>
       <Grid item>
         <FormControl>
           <Select
@@ -45,42 +85,7 @@ export default function SetParamsForm(props) {
             }
           </Select>
           <FormHelperText>VERSÃO</FormHelperText>
-        </FormControl>        
-      </Grid>
-      <Grid item>
-        <Autocomplete
-          id="booksName" helperText="LIVRO" size="small"
-          options={allBooks}
-          getOptionLabel={(option) => option.name}
-          style={{ width: 180 }}
-          renderInput={(params) => <TextField {...params}/>}
-          onChange={
-            (e, newValue) => {
-              (newValue.abbrev)&&(
-                setCurrentParameters({
-                  ...currentParameters,
-                  bookAbbrev: newValue.abbrev.pt,
-                  bookChapters: newValue.chapters,
-                  currentChapter: 1
-                })
-              )
-            }
-          }
-        />
-      </Grid>
-      <Grid item>
-        <TextField
-          id="chapterNumber"
-          helperText="CAPÍTULO"
-          type="number"
-          size="small"
-          style={{ width: 80 }}
-          value={currentParameters.currentChapter}
-          onChange={(e) => setCurrentParameters({...currentParameters, currentChapter: e.target.value})}
-          InputProps={{
-            inputProps: { min: 1, max: currentParameters.bookChapters }
-          }}
-        />
+        </FormControl>
       </Grid>
     </Grid>
   )

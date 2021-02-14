@@ -39,11 +39,11 @@ export const styleObject = makeStyles((theme) => ({
     minHeight: height,
     paddingLeft: '10px',
     paddingRight: '10px',
-    backgroundColor: '#fefefe'
+    backgroundColor: '#0E345E'
   },
   welcomePaper: {
     padding: '0px 20px',    
-    backgroundColor: '#e3ecfc',
+    backgroundColor: theme.palette.background.paper,
     borderTopRightRadius: 0,
     borderTopLeftRadius: 0,
     borderBottomLeftRadius: 20,
@@ -51,10 +51,10 @@ export const styleObject = makeStyles((theme) => ({
   },
   welcomeContent: {
     height: height-5,
-    color: theme.palette.primary.main
+    color: '#1E5878'
   },
   welcomeIcon: {
-    color: theme.palette.primary.main
+    color: '#1E5878'
   },
   middleContainers: {
     width: '100%',
